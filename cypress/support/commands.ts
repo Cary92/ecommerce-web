@@ -26,18 +26,18 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 //
 declare global {
-   namespace Cypress {
-     interface Chainable {
-       login(email: string, password: string): Chainable<void>
-//       
-     }
-   }
- }
+  namespace Cypress {
+    interface Chainable {
+      login(email: string, password: string): Chainable<void>
+      //       
+    }
+  }
+}
 
- export{};
+export { };
 
-Cypress.Commands.add('login',(username: string, password: string) => {
-cy.get('input[formcontrolname="username"]').type(username);
-cy.get('input[formcontrolname="password"]').type(password);
+Cypress.Commands.add('login', (username: string, password: string) => {
+  cy.get('input[formcontrolname="username"]').type(username);
+  cy.get('input[formcontrolname="password"]').type(password);
 
 })
